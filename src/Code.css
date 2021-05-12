@@ -1,0 +1,38 @@
+.code{
+    background: #333;
+    color: #fff;
+    padding: 1.3rem 1rem;
+    height: 100%;
+    border-radius: 6px;
+    box-shadow: 0 0 30px #2e2e2e3f;
+}
+
+.code::-webkit-scrollbar{
+    display: none;
+}
+
+.popper{
+    background: #fff;
+    border-radius: 4px;
+    padding: 6px;
+}
+
+.code .head{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.scriptGenerated{
+    color: rgb(25, 28, 36);
+    margin-top: .5rem;
+    padding: 10px;
+    border-radius: 4px;
+    height: 340px;
+    width: 100%;
+    overflow-y: auto;
+}
+
+.scriptGenerated::-webkit-scrollbar{
+    display: none;
+}
