@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 import "./App.css";
 import Header from "./components/header/Header";
-import Grid from "@material-ui/core/Grid";
-import Container from "@material-ui/core/Container";
-import Code from "./Code";
 import AddNewForm from "./components/AddNewForm";
+import Code from "./Code";
 
 function App() {
   const [code, setCode] = useState(false);
@@ -67,16 +65,17 @@ function App() {
   };
 
   function handleSubmit(e) {
+    console.log(form);
     e.preventDefault();
-    setForm({
-      firstTitle: "",
-      secondTitle: "",
-      firstEmoji: "",
-      secondEmoji: "",
-      timeInterval: "",
-      timeDelay: "",
-    });
-    setCode(false);
+    // setForm({
+    //   firstTitle: "",
+    //   secondTitle: "",
+    //   firstEmoji: "",
+    //   secondEmoji: "",
+    //   timeInterval: "",
+    //   timeDelay: "",
+    // });
+    // setCode(false);
   }
 
   const addFirstEmoji = (emoji, event) => {
@@ -96,26 +95,25 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Container maxWidth="lg" style={{ marginTop: "3rem" }}>
-        <Grid container spacing={3}>
-          <Grid item xs={12} md={6}>
-            <AddNewForm
-              handleChange={handleChange}
-              form={form}
-              audios={audios}
-              audio={audio}
-              handleSubmit={handleSubmit}
-              handleSelect={handleSelect}
-              handleScript={handleScript}
-              addFirstEmoji={addFirstEmoji}
-              addSecondEmoji={addSecondEmoji}
-            />
-          </Grid>
-          <Grid item xs={12} md={6}>
+      <div className="p-8">
+        <div className="grid grid-cols-2 gap-4 items-center">
+          <AddNewForm
+            handleChange={handleChange}
+            form={form}
+            audios={audios}
+            audio={audio}
+            handleSubmit={handleSubmit}
+            handleSelect={handleSelect}
+            handleScript={handleScript}
+            addFirstEmoji={addFirstEmoji}
+            addSecondEmoji={addSecondEmoji}
+          />
+
+          <div>
             <Code form={form} code={code} audio={audio} />
-          </Grid>
-        </Grid>
-      </Container>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

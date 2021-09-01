@@ -1,32 +1,13 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import AppBar from "@material-ui/core/AppBar";
-import Logo from "./logo-light.png";
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-  },
-  title: {
-    flexGrow: 1,
-    textAlign: "center",
-  },
-  appBar: {
-    background: "#0077B5",
-    background: "-webkit-linear-gradient(to right, #0077B5, #30C191)",
-    background: "linear-gradient(to right, #0077B5, #30C191)",
-    boxShadow: "none",
-    padding: "10px",
-  },
-}));
+// import Logo from "./logo-light.png";
 
 function Header() {
-  const classes = useStyles();
   return (
-    <div className={classes.root}>
-      <AppBar position="static" className={classes.appBar}>
-        <img src={Logo} width="100" />
-      </AppBar>
+    <div className="header bg-gradient-to-r from-blue-600 to-green-600 p-4 flex flex-col justify-center items-center">
+      <p className="text-white font-semibold text-lg">
+        <i class="bi bi-megaphone"></i>
+        <span> Tabalerts</span>
+      </p>
     </div>
   );
 }
